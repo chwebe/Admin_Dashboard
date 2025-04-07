@@ -1,0 +1,313 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #1992D4;
+    --background-color: #E2E8F0;
+    --margin-left: 1.5rem;
+}
+
+body {
+    background-color: var(--primary-color);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas: 
+        "nav header header header"
+        "nav main main main";
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header-grid {
+    display: grid;
+    grid-area: header;
+    width: 100%;
+    background-color: var(--primary-color);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.header-top svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;    
+}
+
+.header-top, .header-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    margin-left: var(--margin-left);
+    padding: 0.3rem 0;
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-bar input {
+    border: none;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 70%;
+}
+
+.profile-items {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.profile-pic-user-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-pic-user {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.header-bottom-greeting {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.greeting-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting-message p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.profile-name-bottom {
+    font-weight: bold;
+}
+
+.header-bottom-buttons {
+    display: flex;
+    gap: 3rem;
+}
+
+.btn-new, .btn-upload, .btn-share {
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1rem 4.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.nav-grid {
+    display: grid;
+    grid-area: nav;
+    background-color: var(--secondary-color);
+    align-content: start;
+    padding-top: 1rem;
+}
+
+.nav-title svg {
+    width: 60px;
+    height: 60px;
+    fill: currentColor;
+    
+}
+
+.search-bar svg {
+    width: 23px;
+    height: 23px;
+    fill: #665;
+    margin-right: 7px;
+}
+.nav-item svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.nav-title a {
+   display: flex;
+   align-items: center;
+   
+}
+.nav-title a, .nav-link{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.nav-item a, .nav-title a {
+    display: flex;
+    align-items: center;
+    gap: 1.0rem;
+    padding: 0.3rem 0.7rem;
+}
+
+.nav-item a:hover {
+    background-color: #f0f0f0;
+}
+
+.main-grid {
+    display: grid;
+    grid-area: main;
+    gap: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* SVG styles for header */
+
+.profile svg {
+    width: 24px;
+    height: 24px;
+    fill: #666;
+    margin-right: 16px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "project-title announcement-title"
+        "project-card announcement"
+        "project-card trending";
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--background-color);
+}
+
+.project-title {
+    display: grid;
+    grid-area: project-title;
+    align-self: end;
+}
+
+.announcement-title {
+    display: grid;
+    grid-area: announcement-title;
+}
+
+.project-title, .announcement-title {
+    align-content: end;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+   
+}
+
+.project-grid {
+    display: grid;
+    grid-area: project-card;
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.announcement-grid {
+    display: grid;
+    grid-area: announcement;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--background-color);
+}
+
+.announcement-item:last-child {
+    border-bottom: none;
+}
+
+.announcement-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.announcement-item p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.project-card { 
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--primary-color);
+    border-left: 8px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.project-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.project-actions {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.project-card svg {
+    width: 24px;
+    height: 24px;
+    fill: #666;
+    cursor: pointer;
+    transition: fill 0.2s ease;
+}
+
+.project-card svg:hover {
+    fill: var(--secondary-color);
+}
+
+.trending-grid {
+    grid-area: trending;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
