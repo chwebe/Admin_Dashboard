@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/style.css" rel="stylesheet">
+    <title>Admin Dashboard</title>
+  </head>
+  <body class="">
+    <div class="grid md:grid-cols-[1fr_6fr] grid-cols-1 md:grid-rows-[200px_1fr] grid-rows-[auto_1fr_1fr] h-screen overflow-hidden">
+      <!-- Sidebar (nav area, spans both rows on desktop) -->
+      <aside class="md:row-span-2 row-span-1 bg-blue-700 text-white p-4 md:p-6">
+        Sidebar / Navigation
+      </aside>
+
+      <!-- Header -->
+      <header class="bg-white shadow-sm p-4 md:p-6 flex items-center">
+        Header / Top Bar
+      </header>
+
+      <!-- Main Content -->
+      <main class="bg-gray-100 p-4 md:p-6 overflow-auto">
+        Main Content Area
+      </main>
+    </div>
+  </body>
+</html>
